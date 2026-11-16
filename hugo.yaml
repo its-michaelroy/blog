@@ -3,6 +3,48 @@ locale: en-us
 title: Michael Roy
 theme: PaperMod
 
+outputs:
+  home: [HTML, RSS, JSON]
+
+menu:
+  main:
+    - name: Posts
+      url: /posts/
+      weight: 10
+    - name: Homelab
+      url: /homelab/
+      weight: 20
+    - name: Tags
+      url: /tags/
+      weight: 30
+    - name: Search
+      url: /search/
+      weight: 40
+    - name: About
+      url: /about/
+      weight: 50
+
+params:
+  assets:
+    favicon: /favicon.ico
+    favicon16x16: /favicon-16x16.png
+    favicon32x32: /favicon-32x32.png
+    apple_touch_icon: /apple-touch-icon.png
+  label:
+    text: "Michael Roy"
+    icon: /apple-touch-icon.png
+    iconHeight: 30
+  homeInfoParams:
+    Title: "Hi, I'm Michael"
+    Content: "A DevOps Engineer who writes weekly about my homelab, Kubernetes, CI/CD and self-hosting."
+  socialIcons:
+    - name: github
+      url: https://github.com/its-michaelroy
+    - name: linkedin
+      url: https://www.linkedin.com/in/michaelroy91/
+    - name: email
+      url: mailto:michael@michaelroy.dev
+
 caches:
   images:
     dir: :cacheDir/images
