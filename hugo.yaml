@@ -17,11 +17,12 @@ menu:
     - name: Tags
       url: /tags/
       weight: 30
-    - name: Search
-      url: /search/
-      weight: 40
     - name: About
       url: /about/
+      weight: 40
+    - identifier: search
+      name: "🔍"
+      url: /search/
       weight: 50
 
 params:
@@ -30,7 +31,6 @@ params:
     favicon16x16: /favicon-16x16.png
     favicon32x32: /favicon-32x32.png
     apple_touch_icon: /apple-touch-icon.png
-    safari_pinned_tab: /favicon.svg
   label:
     text: "Michael Roy"
     icon: /logo-header.png
