@@ -2,3 +2,7 @@ baseURL: https://michaelroy.dev/
 locale: en-us
 title: Michael Roy
 theme: PaperMod
+
+caches:
+  images:
+    dir: :cacheDir/images
