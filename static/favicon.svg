@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Simplified favicon — 7 solid cubes in a honeycomb, no hex frames -->
+  <rect x="0" y="0" width="64" height="64" rx="12" ry="12" fill="#0B1324"/>
+  <svg x="3.84" y="5.049" width="56.32" height="53.902" viewBox="5.45 6.59 53.1 50.82" overflow="visible">
+  <g>
+    <g><path d="M 39.448,36.3 L 32,40.6 L 32,32 L 39.448,27.7 Z" fill="#C2410C" stroke="#0B1324" stroke-width="0.45" stroke-linejoin="round"/>
+    <path d="M 24.552,36.3 L 24.552,27.7 L 32,32 L 32,40.6 Z" fill="#F97316" stroke="#0B1324" stroke-width="0.45" stroke-linejoin="round"/>
+    <path d="M 32,23.4 L 39.448,27.7 L 32,32 L 24.552,27.7 Z" fill="#FDBA74" stroke="#0B1324" stroke-width="0.45" stroke-linejoin="round"/></g>
+    <g><path d="M 55.972,35.5 L 49.909,39 L 49.909,32 L 55.972,28.5 Z" fill="#0E7490" stroke="#0B1324" stroke-width="0.405" stroke-linejoin="round"/>
+    <path d="M 43.847,35.5 L 43.847,28.5 L 49.909,32 L 49.909,39 Z" fill="#22D3EE" stroke="#0B1324" stroke-width="0.405" stroke-linejoin="round"/>
+    <path d="M 49.909,25 L 55.972,28.5 L 49.909,32 L 43.847,28.5 Z" fill="#67E8F9" stroke="#0B1324" stroke-width="0.405" stroke-linejoin="round"/></g>
+    <g><path d="M 47.017,51.01 L 40.955,54.51 L 40.955,47.51 L 47.017,44.01 Z" fill="#0E7490" stroke="#0B1324" stroke-width="0.405" stroke-linejoin="round"/>
+    <path d="M 34.893,51.01 L 34.893,44.01 L 40.955,47.51 L 40.955,54.51 Z" fill="#22D3EE" stroke="#0B1324" stroke-width="0.405" stroke-linejoin="round"/>
+    <path d="M 40.955,40.51 L 47.017,44.01 L 40.955,47.51 L 34.893,44.01 Z" fill="#67E8F9" stroke="#0B1324" stroke-width="0.405" stroke-linejoin="round"/></g>
+    <g><path d="M 29.107,51.01 L 23.045,54.51 L 23.045,47.51 L 29.107,44.01 Z" fill="#0E7490" stroke="#0B1324" stroke-width="0.405" stroke-linejoin="round"/>
+    <path d="M 16.983,51.01 L 16.983,44.01 L 23.045,47.51 L 23.045,54.51 Z" fill="#22D3EE" stroke="#0B1324" stroke-width="0.405" stroke-linejoin="round"/>
+    <path d="M 23.045,40.51 L 29.107,44.01 L 23.045,47.51 L 16.983,44.01 Z" fill="#67E8F9" stroke="#0B1324" stroke-width="0.405" stroke-linejoin="round"/></g>
+    <g><path d="M 20.153,35.5 L 14.091,39 L 14.091,32 L 20.153,28.5 Z" fill="#0E7490" stroke="#0B1324" stroke-width="0.405" stroke-linejoin="round"/>
+    <path d="M 8.028,35.5 L 8.028,28.5 L 14.091,32 L 14.091,39 Z" fill="#22D3EE" stroke="#0B1324" stroke-width="0.405" stroke-linejoin="round"/>
+    <path d="M 14.091,25 L 20.153,28.5 L 14.091,32 L 8.028,28.5 Z" fill="#67E8F9" stroke="#0B1324" stroke-width="0.405" stroke-linejoin="round"/></g>
+    <g><path d="M 29.107,19.99 L 23.045,23.49 L 23.045,16.49 L 29.107,12.99 Z" fill="#0E7490" stroke="#0B1324" stroke-width="0.405" stroke-linejoin="round"/>
+    <path d="M 16.983,19.99 L 16.983,12.99 L 23.045,16.49 L 23.045,23.49 Z" fill="#22D3EE" stroke="#0B1324" stroke-width="0.405" stroke-linejoin="round"/>
+    <path d="M 23.045,9.49 L 29.107,12.99 L 23.045,16.49 L 16.983,12.99 Z" fill="#67E8F9" stroke="#0B1324" stroke-width="0.405" stroke-linejoin="round"/></g>
+    <g><path d="M 47.017,19.99 L 40.955,23.49 L 40.955,16.49 L 47.017,12.99 Z" fill="#0E7490" stroke="#0B1324" stroke-width="0.405" stroke-linejoin="round"/>
+    <path d="M 34.893,19.99 L 34.893,12.99 L 40.955,16.49 L 40.955,23.49 Z" fill="#22D3EE" stroke="#0B1324" stroke-width="0.405" stroke-linejoin="round"/>
+    <path d="M 40.955,9.49 L 47.017,12.99 L 40.955,16.49 L 34.893,12.99 Z" fill="#67E8F9" stroke="#0B1324" stroke-width="0.405" stroke-linejoin="round"/></g>
+  </g>
+  </svg>
+</svg>

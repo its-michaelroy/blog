@@ -30,10 +30,14 @@ params:
     favicon16x16: /favicon-16x16.png
     favicon32x32: /favicon-32x32.png
     apple_touch_icon: /apple-touch-icon.png
+    safari_pinned_tab: /favicon.svg
   label:
     text: "Michael Roy"
-    icon: /apple-touch-icon.png
+    icon: /logo-header.png
     iconHeight: 30
+  images:
+    - og-image.png
+
   homeInfoParams:
     Title: "Hi, I'm Michael"
     Content: "A DevOps Engineer who writes weekly about my homelab, Kubernetes, CI/CD and self-hosting."
