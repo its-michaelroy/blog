@@ -6,7 +6,7 @@ set -euo pipefail
 # Define tool versions
 DART_SASS_VERSION=1.108.2
 GO_VERSION=1.27.4
-HUGO_VERSION=0.170.0
+HUGO_VERSION=0.170.1
 NODE_VERSION=24.22.3
 
 # Set the build time zone
@@ -55,7 +55,7 @@ main() {
   # Install Hugo
   echo "Installing Hugo ${HUGO_VERSION}..."
   HUGO_TARBALL="hugo_${HUGO_VERSION}_linux-amd64.tar.gz"
-  HUGO_SHA256="0930754ec22ad2dd1a252f8c31a5e57faccc9d15f1c3d381ddafcb96eeb8aef0"
+  HUGO_SHA256="841a5462853aefc9942e4de1e8a5d75584b6a5181941e6ad3f1d745190e03cd8"
   curl -sfL --output-dir "${build_temp_dir}" -O "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_TARBALL}"
   echo "${HUGO_SHA256}  ${build_temp_dir}/${HUGO_TARBALL}" | sha256sum -c -
   mkdir -p "${HOME}/.local/hugo"
