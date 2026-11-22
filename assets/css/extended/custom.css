@@ -1,7 +1,17 @@
+/* Tighter home intro */
+.home-info {
+  min-height: auto;
+  margin-bottom: var(--gap);
+}
+
 .footer .social-icons {
   display: flex;
   justify-content: center;
   margin-bottom: 8px;
+}
+
+.footer a:hover {
+  color: var(--brand-cyan);
 }
 
 .post-content th {
@@ -109,4 +119,15 @@
 /* Optional thin top bar. */
 .header {
   border-top: 3px solid var(--brand-cyan);
+}
+
+/* Tags page: cyan on hover */
+.terms-tags a:hover {
+  color: var(--brand-cyan);
+  box-shadow: inset 0 0 0 1px var(--brand-cyan);
+}
+
+/* Archives: post titles cyan on hover */
+.archive-entry:hover .archive-entry-title {
+  color: var(--brand-cyan);
 }

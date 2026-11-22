@@ -18,10 +18,3 @@ I now do freelance infrastructure work under Independent Infrastructure Labs. I 
 ## What I'm working on
 
 My homelab is a 6 node HA k3s cluster with 3 control planes and 3 workers. I'm working toward GitOps on that cluster and studying for the CKAD exam.
-
-## Links
-
-- [GitHub](https://github.com/its-michaelroy)
-- [LinkedIn](https://www.linkedin.com/in/michaelroy91)
-- [X](https://x.com/its_michaelroy)
-- [RSS](/index.xml)

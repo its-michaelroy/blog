@@ -2,6 +2,13 @@
 date: '2026-11-16T00:18:07-03:00'
 draft: false
 title: 'Hardware'
+tags:
+  - Homelab
+  - Hardware
+  - k3s
+  - Kubernetes
+  - Networking
+  - Arch Linux
 ---
 
 My homelab is a small bare-metal Kubernetes cluster built from refurbished mini PCs and laptops, running k3s on Arch Linux.
