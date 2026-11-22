@@ -1,0 +1,93 @@
+name: Hugo update
+
+on:
+  schedule:
+    # Weekly, Monday 09:27 America/New_York
+    - cron: "27 13 * * 1"
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  update:
+    name: Check for Hugo release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Compare with latest release
+        id: hugo
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          current="$(sed -n 's/^HUGO_VERSION=//p' build.sh)"
+          latest="$(gh api repos/gohugoio/hugo/releases/latest --jq '.tag_name' | sed 's/^v//')"
+
+          echo "Current Hugo version in build.sh: ${current}"
+          echo "Latest gohugoio/hugo release: ${latest}"
+
+          if [[ "${current}" == "${latest}" ]]; then
+            echo "Hugo is already at ${current}. No update."
+            echo "updated=false" >> "${GITHUB_OUTPUT}"
+            echo "latest=${latest}" >> "${GITHUB_OUTPUT}"
+            exit 0
+          fi
+
+          curl -sSfL -o /tmp/hugo-checksums.txt \
+            "https://github.com/gohugoio/hugo/releases/download/v${latest}/hugo_${latest}_checksums.txt"
+
+          new_sha="$(awk -v f="hugo_${latest}_linux-amd64.tar.gz" '$2 == f {print $1; found=1} END {exit !found}' /tmp/hugo-checksums.txt)"
+          if [[ ! "${new_sha}" =~ ^[0-9a-f]{64}$ ]]; then
+            echo "Could not read a SHA-256 for hugo_${latest}_linux-amd64.tar.gz" >&2
+            cat /tmp/hugo-checksums.txt >&2
+            exit 1
+          fi
+
+          echo "New SHA-256: ${new_sha}"
+
+          python3 - "${latest}" "${new_sha}" <<'PY'
+          import re
+          import sys
+          from pathlib import Path
+
+          latest, sha = sys.argv[1], sys.argv[2]
+          path = Path("build.sh")
+          text = path.read_text()
+          text, n1 = re.subn(r"^HUGO_VERSION=.*$", f"HUGO_VERSION={latest}", text, count=1, flags=re.M)
+          text, n2 = re.subn(r'^(\s*)HUGO_SHA256=.*$', rf'\1HUGO_SHA256="{sha}"', text, count=1, flags=re.M)
+          if n1 != 1 or n2 != 1:
+              sys.exit(f"Failed to edit build.sh (version replacements={n1}, sha replacements={n2})")
+          path.write_text(text)
+          PY
+
+          echo "Updated lines:"
+          grep -nE '^(HUGO_VERSION=|[[:space:]]*HUGO_SHA256=)' build.sh
+
+          echo "updated=true" >> "${GITHUB_OUTPUT}"
+          echo "latest=${latest}" >> "${GITHUB_OUTPUT}"
+          echo "sha=${new_sha}" >> "${GITHUB_OUTPUT}"
+
+      - name: Create pull request
+        if: steps.hugo.outputs.updated == 'true'
+        uses: peter-evans/create-pull-request@3ffccacd46053766916f087ce41d627c0b8cf2d1 # v8.1.3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          add-paths: build.sh
+          commit-message: "Bump Hugo to ${{ steps.hugo.outputs.latest }}"
+          branch: chore/hugo-update
+          delete-branch: true
+          title: "Bump Hugo to ${{ steps.hugo.outputs.latest }}"
+          body: |
+            Automated Hugo bump.
+
+            - `HUGO_VERSION` in `build.sh`: ${{ steps.hugo.outputs.latest }}
+            - `HUGO_SHA256` from the official `checksums.txt` for `hugo_${{ steps.hugo.outputs.latest }}_linux-amd64.tar.gz` (not the extended or withdeploy artifact)
+            - SHA-256: `${{ steps.hugo.outputs.sha }}`
+
+            Please review the diff, wait for the Cloudflare preview/build, and merge yourself. Do not enable auto-merge.
