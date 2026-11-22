@@ -8,3 +8,105 @@
   background: #1e3a5f;
   color: #5eead4;
 }
+
+:root {
+  --brand-navy: #0b1324;
+  --brand-cyan: #22D3EE;
+  --brand-orange: #F97316;
+}
+
+/* Active nav item, a cyan bar*/
+#menu .active,
+.menu .active {
+  color: var(--brand-cyan);
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 2px 0 var(--brand-cyan);
+}
+
+#menu a:hover span,
+.menu a:hover span {
+  color: var(--brand-cyan);
+}
+
+/* Colored accent underline under page and post titles */
+.home-info .entry-header h1,
+.page-header h1,
+.post-title {
+  background-image: linear-gradient(var(--brand-cyan), var(--brand-cyan));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 4rem 3px;
+  padding-bottom: 0.45rem;
+}
+
+/* Home and list titles: cyan underline on hover */
+.post-entry .entry-header h2 {
+  display: inline-block;
+  background-image: linear-gradient(var(--brand-cyan), var(--brand-cyan));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0 2px;
+  padding-bottom: 0.2rem;
+  transition: background-size 0.2s ease, color 0.2s ease;
+}
+
+.post-entry:hover .entry-header h2,
+.post-entry:focus-within .entry-header h2 {
+  color: var(--brand-cyan);
+  background-size: 100% 2px;
+}
+
+/* Search box focus: colored border and soft glow */
+#searchInput:focus,
+.searchbox input:focus {
+  border-color: var(--brand-cyan);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.2);
+}
+
+.searchResults li:hover,
+.searchResults li:focus-within {
+  border-color: var(--brand-cyan);
+}
+
+/* Tags at the bottom of home and list entries.
+   z index keeps the tag links clickable above PaperMod's stretched
+   .entry-link overlay. */
+.entry-footer .meta-tags,
+.post-meta .meta-tags {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.55rem;
+}
+
+.meta-tag {
+  font-size: 0.75rem;
+  line-height: 1.2;
+  color: var(--brand-cyan);
+  border: 1px solid var(--brand-cyan);
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  text-decoration: none;
+}
+
+.meta-tag:hover {
+  background: var(--brand-cyan);
+  color: var(--brand-navy);
+  text-decoration: none;
+}
+
+/* style PaperMod's single post tag pills and prev/next
+   to use the same accent. */
+.post-tags a:hover,
+.paginav a:hover {
+  border-color: var(--brand-cyan);
+}
+
+/* Optional thin top bar. */
+.header {
+  border-top: 3px solid var(--brand-cyan);
+}

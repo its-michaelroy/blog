@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 
-#------------------------------------------------------------------------------
-# @file
-# Builds a Hugo project hosted on a Cloudflare Worker.
-#------------------------------------------------------------------------------
-
 # Exit on error, undefined variables, or pipe failures
 set -euo pipefail
 

@@ -24,6 +24,10 @@ menu:
       name: "🔍"
       url: /search/
       weight: 50
+    - identifier: archive
+      name: "📚"
+      url: /archives/
+      weight: 60
 
 params:
   assets:
@@ -38,9 +42,17 @@ params:
   images:
     - og-image.png
 
+  defaultTheme: auto
+  ShowPostNavLinks: true
+  ShowCodeCopyButtons: true
+  ShowBreadCrumbs: false
+  hideSummary: false
+  mainSections:
+    - posts
+
   homeInfoParams:
-    Title: "Hi, I'm Michael"
-    Content: "A DevOps Engineer who writes weekly about my homelab, Kubernetes, CI/CD and self-hosting."
+    Title: "Nice to meet you, I'm Michael"
+    Content: "A DevOps engineer with 10+ years in IT and infrastructure operations. I write about my homelab, Kubernetes, Linux, AWS, and self-hosting."
   socialIcons:
     - name: github
       url: https://github.com/its-michaelroy
@@ -48,6 +60,10 @@ params:
       url: https://www.linkedin.com/in/michaelroy91/
     - name: email
       url: mailto:michael@michaelroy.dev
+        - name: x
+      url: https://x.com/its_michaelroy
+    - name: rss
+      url: https://michaelroy.dev/index.xml
 
 caches:
   images:
