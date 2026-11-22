@@ -54,9 +54,12 @@ main() {
 
   # Install Hugo
   echo "Installing Hugo ${HUGO_VERSION}..."
-  curl -sfL --output-dir "${build_temp_dir}" -O "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-amd64.tar.gz"
+  HUGO_TARBALL="hugo_${HUGO_VERSION}_linux-amd64.tar.gz"
+  HUGO_SHA256="0930754ec22ad2dd1a252f8c31a5e57faccc9d15f1c3d381ddafcb96eeb8aef0"
+  curl -sfL --output-dir "${build_temp_dir}" -O "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_TARBALL}"
+  echo "${HUGO_SHA256}  ${build_temp_dir}/${HUGO_TARBALL}" | sha256sum -c -
   mkdir -p "${HOME}/.local/hugo"
-  tar -C "${HOME}/.local/hugo" -xf "${build_temp_dir}/hugo_${HUGO_VERSION}_linux-amd64.tar.gz"
+  tar -C "${HOME}/.local/hugo" -xf "${build_temp_dir}/${HUGO_TARBALL}"
   export PATH="${HOME}/.local/hugo:${PATH}"
 
   # Install Node.js

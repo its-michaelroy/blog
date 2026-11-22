@@ -131,3 +131,6 @@
 .archive-entry:hover .archive-entry-title {
   color: var(--brand-cyan);
 }
+
+/* Hide PaperMod's bottom tag list. tags already show in the post header */
+.post-tags { display: none; }
