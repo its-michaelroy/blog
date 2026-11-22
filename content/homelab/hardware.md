@@ -15,27 +15,7 @@ My homelab is a small bare-metal Kubernetes cluster built from refurbished mini 
 
 ## Cluster Layout
 
-```mermaid
-flowchart TB
-    mac["💻 MacBook M4<br/>Daily driver · kubectl"]
-    sw["🔀 TP-Link TL-SG108E<br/>8-port 1 GbE switch"]
-
-    subgraph cp["k3s Control Plane"]
-        d1["Dell 7060 #1<br/>i5-8500T · 16 GB"]
-        d2["Dell 7060 #2<br/>i5-8500T · 16 GB"]
-        l1["Lenovo M720q #1<br/>i5-8400T · 16 GB"]
-    end
-
-    subgraph wk["k3s Workers"]
-        l2["Lenovo M720q #2<br/>i5-8400T · 16 GB"]
-        s1["Sony laptop #1<br/>16 GB"]
-        s2["Sony laptop #2<br/>16 GB"]
-    end
-
-    mac -.->|manages| sw
-    sw --- d1 & d2 & l1
-    sw --- l2 & s1 & s2
-```
+![Hardware diagram](/images/hardware-diagram.svg)
 
 ## Cluster Nodes
 
