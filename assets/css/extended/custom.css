@@ -116,11 +116,6 @@
   border-color: var(--brand-cyan);
 }
 
-/* Optional thin top bar. */
-.header {
-  border-top: 3px solid var(--brand-cyan);
-}
-
 /* Tags page: cyan on hover */
 .terms-tags a:hover {
   color: var(--brand-cyan);
