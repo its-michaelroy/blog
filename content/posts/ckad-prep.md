@@ -69,7 +69,7 @@ With the game plan laid out I’ll look forward to studying 1-2 hours a day on w
 
 ## Here’s what I’ve learned so far:
 
-![Summary on K8s Runtime & Pods](/images/k8-summary.png)
+![Summary on K8s Runtime & Pods](/images/kube-summary.png)
 
 ### Pods and YAML
 
